@@ -1,0 +1,261 @@
+:root {
+    --primary: #1a3a5f;
+    --secondary: #c9a55c;
+    --bg: #f4f7f9;
+    --text: #333;
+    --card-bg: #fff;
+    --border: #ddd;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: var(--primary);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom: 4px solid var(--secondary);
+}
+
+.subtitle {
+    font-weight: 300;
+    opacity: 0.9;
+    letter-spacing: 1px;
+}
+
+nav {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    background-color: var(--bg);
+    color: var(--secondary);
+}
+
+main {
+    padding: 40px 0;
+}
+
+h2 {
+    border-left: 5px solid var(--secondary);
+    padding-left: 15px;
+    margin-bottom: 30px;
+    color: var(--primary);
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.status-badge {
+    display: inline-block;
+    background-color: #e3f2fd;
+    color: #1565c0;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+.timeline {
+    border-left: 2px solid var(--border);
+    padding-left: 30px;
+    margin-left: 10px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -37px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--secondary);
+    border: 3px solid white;
+}
+
+.date {
+    font-weight: bold;
+    color: var(--secondary);
+    font-size: 0.9em;
+}
+
+.btn-sm:hover {
+    background: var(--secondary);
+    color: var(--primary);
+}
+
+/* Estilos de Tabela e Badges */
+.card-table {
+    background: var(--card-bg);
+    padding: 0;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+th {
+    background: var(--primary);
+    color: white;
+    text-align: left;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #f9f9f9;
+}
+
+.badge-audit {
+    display: inline-block;
+    background: #f1f3f4;
+    color: #5f6368;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75em;
+    font-weight: bold;
+    border: 1px solid #dadce0;
+}
+
+/* Estilos de Chat UI */
+.card-chat {
+    background: #e5ddd5;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 30px;
+}
+
+.chat-header {
+    background: #075e54;
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+
+.chat-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.bubble {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    position: relative;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+
+.bubble.recipient {
+    background: white;
+    align-self: flex-start;
+}
+
+.bubble .sender {
+    display: block;
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #128c7e;
+    margin-bottom: 5px;
+}
+
+.bubble .time {
+    display: block;
+    font-size: 0.65em;
+    color: #999;
+    text-align: right;
+    margin-top: 5px;
+}
+
+.bubble strong {
+    color: #d32f2f;
+}
+
+blockquote {
+    font-style: italic;
+    font-size: 1.1em;
+    color: #555;
+    border-left: 5px solid var(--secondary);
+    padding: 10px 20px;
+    margin: 20px 0;
+    background: #f9f9f9;
+}
+
+.cite {
+    font-size: 0.85em;
+    color: #888;
+    text-align: right;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #888;
+    font-size: 0.8em;
+}

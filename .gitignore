@@ -1,0 +1,16 @@
+# 🛡️ Auditoria Gitignore
+# Ignorar arquivos de script e fontes unencrypted
+
+*.py
+*.md
+*.vtt
+*.txt
+*.pdf
+.DS_Store
+*.enc.json.bak
+node_modules/
+.env
+
+# Apenas permitir o index.html e a pasta assets/ (que contém dados cifrados)
+!index.html
+!assets/
