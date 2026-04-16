@@ -52,6 +52,7 @@
         <input type="password" id="unlock-pass" placeholder="Chave Mestra" onkeypress="if(event.key === 'Enter') tryUnlock()">
         <button onclick="tryUnlock()">Desbloquear Relatório</button>
         <div id="error-msg">Chave inválida ou dados corrompidos.</div>
+        <div id="build-tag" style="font-size: 0.6rem; color: #ccc; margin-top: 15px; opacity: 0.5;">Build: v18.0.4-soberano-20260416-1145</div>
     </div>
 </div>
 <header>
@@ -74,10 +75,13 @@
     async function loadData() {
         try {
             const res = await fetch('assets/data.json?v=' + Date.now());
+            if (!res.ok) throw new Error("File not found");
             const data = await res.json();
             encryptedPayload = data.payload;
+            console.log("Data loaded successfully.");
         } catch(e) { 
-            document.getElementById('error-msg').innerText = "Erro ao carregar dados cifrados.";
+            console.error("Fetch error:", e);
+            document.getElementById('error-msg').innerText = "Erro ao carregar dados cifrados (assets/data.json não encontrado).";
             document.getElementById('error-msg').style.display = 'block';
         }
     }
@@ -107,6 +111,7 @@
             renderAll();
             document.getElementById('unlock-overlay').classList.add('unlocked');
         } else {
+            document.getElementById('error-msg').innerText = "Chave inválida ou dados corrompidos.";
             document.getElementById('error-msg').style.display = 'block';
         }
     }
